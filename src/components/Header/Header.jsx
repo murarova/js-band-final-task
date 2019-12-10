@@ -1,9 +1,15 @@
+/* eslint-disable react/require-default-props */
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { Link } from 'react-router-dom';
-import PropTypes from 'prop-types';
 import Icon from '../Icon/Icon';
 
+import {
+    matchType,
+    logoutType,
+    usernameType,
+    avatarType,
+} from '../../constants/types';
 import * as authActions from '../../redux/actions/authActions';
 import { getUsername, getAvatar } from '../../redux/selectors/selectors';
 
@@ -31,7 +37,7 @@ class Header extends Component {
                     </header>
                 )}
 
-                {match.path.includes('/dashboard') && (
+                {match.path.includes('/books') && (
                     <header>
                         <nav className="navbar navbar-light bg-primary">
                             <div className="container">
@@ -51,7 +57,7 @@ class Header extends Component {
                                         <span className="icon-bar" />
                                     </button>
                                     <Link
-                                        to="/dashboard"
+                                        to="/books"
                                         className="navbar-brand navbar-left white"
                                     >
                                         JS-BAND STORE
@@ -108,15 +114,10 @@ Header.defaultProps = {
 };
 
 Header.propTypes = {
-    match: PropTypes.shape({
-        path: PropTypes.string.isRequired,
-        params: PropTypes.shape({
-            id: PropTypes.node,
-        }).isRequired,
-    }).isRequired,
-    logout: PropTypes.func.isRequired,
-    username: PropTypes.string,
-    avatar: PropTypes.string,
+    match: matchType,
+    logout: logoutType,
+    username: usernameType,
+    avatar: avatarType,
 };
 
 const mapStateToProps = state => ({

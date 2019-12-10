@@ -2,8 +2,8 @@
 import React from 'react';
 import { Route, Redirect } from 'react-router-dom';
 import { connect } from 'react-redux';
-import PropTypes from 'prop-types';
 import { getToken } from '../redux/selectors/selectors';
+import { tokenType } from '../constants/types';
 
 // eslint-disable-next-line react/prop-types
 const ProtectedComponent = ({ component: Component, token, ...rest }) => {
@@ -26,7 +26,7 @@ ProtectedComponent.defaultProps = {
 };
 
 ProtectedComponent.propTypes = {
-    token: PropTypes.string,
+    token: tokenType,
 };
 
 const mapStateToProps = state => ({
