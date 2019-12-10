@@ -1,10 +1,16 @@
+/* eslint-disable react/jsx-props-no-spreading */
 import React from 'react';
 import * as Icons from '../../assets/icons';
+import { iconType } from '../../constants/types';
 
 const Icon = ({ icon, ...rest }) => {
-  let Svg = Icons[icon]
+    const Svg = Icons[icon];
 
-  return <Svg {...rest}/>;
+    return <Svg {...rest} />;
+};
+
+Icon.propType = {
+    icon: iconType,
 };
 
 export default Icon;

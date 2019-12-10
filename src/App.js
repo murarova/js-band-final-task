@@ -1,7 +1,7 @@
 import React from 'react';
 import { Switch, Redirect, Route } from 'react-router-dom';
 import { ToastContainer } from 'react-toastify';
-import Dashboard from './pages/Dashboard/Dashboard';
+import Books from './pages/Books/Books';
 import PageNotFound from './pages/NotFound/NotFound';
 import Login from './pages/Login/Login';
 import ProtectedComponent from './hoc/ProtectedComponent';
@@ -11,8 +11,8 @@ const App = () => (
     <>
         <Switch>
             <Route path="/login" component={Login} />
-            <Redirect exact path="/" to="/dashboard" />
-            <ProtectedComponent path="/dashboard" component={Dashboard} />
+            <Redirect exact path="/" to="/books" />
+            <ProtectedComponent path="/books" component={Books} />
             <Route component={PageNotFound} />
         </Switch>
         <ToastContainer />

@@ -1,14 +1,14 @@
 /* eslint-disable jsx-a11y/label-has-associated-control */
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import PropTypes from 'prop-types';
 import { authRequest } from '../../redux/actions/authActions';
 import * as notify from '../../utils/notification';
 import { getError } from '../../redux/selectors/selectors';
 import Icon from '../Icon/Icon';
+import { onSubmitType, errorType } from '../../constants/types';
 
 const INITIAL_STATE = {
-    nickname: '',
+    username: '',
 };
 
 class AuthForm extends Component {
@@ -32,7 +32,7 @@ class AuthForm extends Component {
         const { username } = this.state;
 
         if (username.length < 4 || username.length > 16) {
-            notify.error('The nickname should be between 4 and 16 symbols');
+            notify.error('The username should be between 4 and 16 symbols');
             return;
         }
 
@@ -88,8 +88,8 @@ AuthForm.defaultProps = {
 };
 
 AuthForm.propTypes = {
-    onSubmit: PropTypes.func,
-    error: PropTypes.string,
+    onSubmit: onSubmitType,
+    error: errorType,
 };
 
 const mapStateToProps = state => ({
