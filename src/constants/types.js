@@ -3,6 +3,7 @@ import PropTypes from 'prop-types';
 const { shape, arrayOf, number, string, func, bool } = PropTypes;
 
 export const onSubmitType = func.isRequired;
+export const searchByTitleType = func.isRequired;
 export const errorType = string;
 
 // ========= Books ===========

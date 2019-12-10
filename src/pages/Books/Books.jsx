@@ -11,6 +11,8 @@ import {
     getListings,
 } from '../../redux/selectors/selectors';
 
+import Filter from '../../components/Filter/Filter';
+
 import {
     fetchBooksType,
     loaderType,
@@ -38,6 +40,7 @@ class Books extends Component {
                 <div className="container">
                     <div className="row justify-content-center">
                         <div className="col-xs-10 col-sm-12">
+                            <Filter />
                             <div className="book-list">
                                 {loader ? (
                                     <div className="loader">

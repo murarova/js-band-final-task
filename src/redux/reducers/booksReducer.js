@@ -7,7 +7,10 @@ const initialState = {
     listings: [],
     loader: false,
     error: null,
-    search: '',
+    search: {
+        title: '',
+        price: '',
+    },
 };
 
 export const booksReducer = (state = initialState, { type, payload }) => {
@@ -31,6 +34,23 @@ export const booksReducer = (state = initialState, { type, payload }) => {
                     ...state.books.slice(state.pageSize, state.pageSize + 9),
                 ],
                 pageSize: state.pageSize + 9,
+            };
+        case booksTypes.SEARCH_BY_TITLE:
+            return {
+                ...state,
+                search: {
+                    ...state.search,
+                    title: payload,
+                },
+            };
+
+        case booksTypes.FILTER_BY_PRICE:
+            return {
+                ...state,
+                search: {
+                    ...state.search,
+                    price: payload,
+                },
             };
 
         default:
