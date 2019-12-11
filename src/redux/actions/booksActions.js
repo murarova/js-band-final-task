@@ -5,7 +5,24 @@ export const booksTypes = {
     FETCH_BOOKS_SUCCESS: 'FETCH_BOOKS_SUCCESS',
     FETCH_BOOKS_ERROR: 'FETCH_BOOKS_ERROR',
     LOAD_MORE: 'LOAD_MORE',
+    SEARCH_BY_TITLE: 'SEARCH_BY_TITLE',
+    FILTER_BY_PRICE: 'FILTER_BY_PRICE',
+    EMPTY_FILTER: 'EMPTY_FILTER',
 };
+
+export const searchByTitle = search => ({
+    type: booksTypes.SEARCH_BY_TITLE,
+    payload: {
+        search,
+    },
+});
+
+export const filterByPrice = filter => ({
+    type: booksTypes.FILTER_BY_PRICE,
+    payload: {
+        filter,
+    },
+});
 
 export const fetchBooksSuccess = books => ({
     type: booksTypes.FETCH_BOOKS_SUCCESS,

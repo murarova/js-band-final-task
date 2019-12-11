@@ -11,6 +11,8 @@ import {
     getListings,
 } from '../../redux/selectors/selectors';
 
+import Filter from '../../components/Filter/Filter';
+
 import {
     fetchBooksType,
     loaderType,
@@ -22,7 +24,6 @@ import {
 class Books extends Component {
     constructor(props) {
         super(props);
-        this.state = {};
     }
 
     componentDidMount() {
@@ -37,7 +38,8 @@ class Books extends Component {
                 <Header match={match} />
                 <div className="container">
                     <div className="row justify-content-center">
-                        <div className="col-xs-10 col-sm-12">
+                        <div className="col-xs-8 col-sm-12">
+                            <Filter />
                             <div className="book-list">
                                 {loader ? (
                                     <div className="loader">
@@ -50,18 +52,20 @@ class Books extends Component {
                                         />
                                     </div>
                                 ) : (
-                                    <>
-                                        <BooksList books={listings} />
-                                        <button
-                                            type="button"
-                                            className="btn btn-warning"
-                                            onClick={loadMore}
-                                        >
-                                            Load More
-                                        </button>
-                                    </>
+                                    <BooksList books={listings} />
                                 )}
                             </div>
+                        </div>
+                    </div>
+                    <div className="row justify-content-center">
+                        <div className="">
+                            <button
+                                type="button"
+                                className="btn btn-warning load-more-btn"
+                                onClick={loadMore}
+                            >
+                                Load More
+                            </button>
                         </div>
                     </div>
                 </div>

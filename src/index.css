@@ -87,11 +87,13 @@ img {
 /* =========== grid ============= */
 
 .book-list {
-    margin: 20px auto 70px;
+    margin: 20px auto 20px;
     display: grid;
-    grid-template-rows: 1fr;
     grid-template-columns: 1fr;
     grid-gap: 2vw;
+}
+.load-more-btn {
+    margin-bottom: 20px;
 }
 
 .book {
@@ -139,14 +141,24 @@ img {
 
 @media (min-width: 480px) {
     .book-list {
-        grid-template-rows: 1fr 1fr;
         grid-template-columns: 1fr 1fr;
     }
 }
 
-@media (min-width: 760px) {
+@media (min-width: 768px) {
     .book-list {
-        grid-template-rows: 1fr 1fr 1fr;
         grid-template-columns: 1fr 1fr 1fr;
+    }
+}
+
+@media (min-width: 992px) {
+    .book-list {
+        grid-template-columns: 1fr 1fr 1fr 1fr;
+    }
+}
+
+@media (min-width: 1200px) {
+    .book-list {
+        grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
     }
 }
