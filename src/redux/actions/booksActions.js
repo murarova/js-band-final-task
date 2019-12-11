@@ -7,6 +7,7 @@ export const booksTypes = {
     LOAD_MORE: 'LOAD_MORE',
     SEARCH_BY_TITLE: 'SEARCH_BY_TITLE',
     FILTER_BY_PRICE: 'FILTER_BY_PRICE',
+    EMPTY_FILTER: 'EMPTY_FILTER',
 };
 
 export const searchByTitle = search => ({
@@ -16,10 +17,10 @@ export const searchByTitle = search => ({
     },
 });
 
-export const filterByPrice = search => ({
+export const filterByPrice = filter => ({
     type: booksTypes.FILTER_BY_PRICE,
     payload: {
-        search,
+        filter,
     },
 });
 

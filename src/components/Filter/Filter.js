@@ -3,17 +3,22 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import * as booksActions from '../../redux/actions/booksActions';
-import { searchByTitleType } from '../../constants/types';
+import { searchByTitleType, filterByPriceType } from '../../constants/types';
 
 class Filter extends Component {
     constructor(props) {
         super(props);
-        this.state = {};
+
+        this.onChange = this.onChange.bind(this);
     }
 
     onChange(e) {
-        const { searchByTitle } = this.props;
-        searchByTitle(e.target.value);
+        const { searchByTitle, filterByPrice } = this.props;
+        if (e.target.name === 'title') {
+            searchByTitle(e.target.value);
+        } else {
+            filterByPrice(e.target.value);
+        }
     }
 
     render() {
@@ -45,7 +50,7 @@ class Filter extends Component {
                                         <option value="low">
                                             from 0 to 15
                                         </option>
-                                        <option value="middle">
+                                        <option value="medium">
                                             from 15 to 30
                                         </option>
                                         <option value="high">from 30</option>
@@ -62,11 +67,12 @@ class Filter extends Component {
 
 Filter.propTypes = {
     searchByTitle: searchByTitleType,
+    filterByPrice: filterByPriceType,
 };
 
 const mapDispatchToProps = dispatch => ({
-    searchByTitle: () => dispatch(booksActions.searchByTitle()),
-    filterByPrice: () => dispatch(booksActions.filterByPrice()),
+    searchByTitle: search => dispatch(booksActions.searchByTitle(search)),
+    filterByPrice: filter => dispatch(booksActions.filterByPrice(filter)),
 });
 
 export default connect(null, mapDispatchToProps)(Filter);
