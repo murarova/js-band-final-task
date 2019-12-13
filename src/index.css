@@ -56,6 +56,9 @@ img {
 }
 
 /* =========== Header =============== */
+.navbar {
+    border-radius: unset;
+}
 
 .menu {
     display: flex;
@@ -84,7 +87,7 @@ img {
     margin: 8px 0 8px 8px;
 }
 
-/* =========== grid ============= */
+/* =========== books grid ============= */
 
 .book-list {
     margin: 20px auto 20px;
@@ -92,6 +95,7 @@ img {
     grid-template-columns: 1fr;
     grid-gap: 2vw;
 }
+
 .load-more-btn {
     margin-bottom: 20px;
 }
@@ -137,6 +141,12 @@ img {
     white-space: nowrap;
     overflow: hidden;
     margin: 0 0 5px;
+}
+
+/* =========== books page ============= */
+
+.book-wrapper {
+    width: 30%;
 }
 
 @media (min-width: 480px) {

@@ -21,6 +21,7 @@ class Header extends Component {
 
     render() {
         const { match, logout, username, avatar } = this.props;
+
         return (
             <>
                 {match.path.includes('/login') && (
@@ -37,7 +38,7 @@ class Header extends Component {
                     </header>
                 )}
 
-                {match.path.includes('/books') && (
+                {match.path.includes('/book') && (
                     <header>
                         <nav className="navbar navbar-light bg-primary">
                             <div className="container">

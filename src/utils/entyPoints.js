@@ -2,4 +2,5 @@
 export const url = {
     loginUser: () => '/signin',
     books: () => '/books',
+    oneBook: id => `/books/${id}`,
 };

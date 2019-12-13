@@ -22,6 +22,7 @@ import {
 } from '../../constants/types';
 
 class Books extends Component {
+    // eslint-disable-next-line no-useless-constructor
     constructor(props) {
         super(props);
     }

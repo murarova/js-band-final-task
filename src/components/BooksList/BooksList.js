@@ -8,6 +8,7 @@ const BooksList = ({ books }) => {
         books.map(book => (
             <Book
                 key={book.id}
+                id={book.id}
                 title={book.title}
                 price={book.price}
                 author={book.author}
