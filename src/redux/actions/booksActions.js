@@ -1,4 +1,5 @@
 import { url } from '../../utils/entyPoints';
+import { logout } from './authActions';
 
 export const booksTypes = {
     FETCH_BOOKS_REQUEST: 'FETCH_BOOKS_REQUEST',
@@ -52,6 +53,7 @@ export const fetchBooks = () => ({
                 dispatch(fetchBooksSuccess(response.data));
             },
             onError({ dispatch, error }) {
+                dispatch(logout());
                 dispatch(fetchBooksError(error));
             },
         },

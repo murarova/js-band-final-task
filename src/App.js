@@ -6,7 +6,7 @@ import PageNotFound from './pages/NotFound/NotFound';
 import Login from './pages/Login/Login';
 import BookPage from './pages/BookPage/BookPage';
 import ProtectedComponent from './hoc/ProtectedComponent';
-import './index.css';
+import './styles/index.scss';
 
 const App = () => (
     <>

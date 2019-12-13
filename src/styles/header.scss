@@ -1,0 +1,38 @@
+.navbar {
+    border-radius: unset;
+}
+
+.icon-bar {
+    background-color: #ffffff;
+}
+
+.navbar-brand:hover {
+    color: #ffffff;
+}
+
+.menu {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.menu-item {
+    margin-right: 10px;
+}
+.menu-item:last-child {
+    margin-right: 0;
+}
+
+.shopping-cart {
+    width: 25px;
+    height: 25px;
+    fill: #ffffff;
+}
+
+.avatar-wrapper {
+    overflow: hidden;
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    margin: 8px 0 8px 8px;
+}

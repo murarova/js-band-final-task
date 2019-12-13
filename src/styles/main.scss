@@ -1,0 +1,43 @@
+* {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+
+ul,
+li {
+    list-style: none;
+}
+
+a {
+    text-decoration: none;
+}
+
+img {
+    display: block;
+    max-width: 100%;
+    width: 100%;
+    height: auto;
+}
+
+.justify-content-center {
+    display: flex;
+    justify-content: center;
+}
+
+.white {
+    color: #ffffff;
+}
+
+.width-100 {
+    width: 100%;
+}
+
+.margin-top-30 {
+    margin-top: 30px;
+}
+
+.img-wrapper {
+    display: flex;
+    justify-content: center;
+}
