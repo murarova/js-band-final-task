@@ -1,4 +1,3 @@
-/* eslint-disable react/require-default-props */
 import React from 'react';
 import { connect } from 'react-redux';
 import { Redirect } from 'react-router-dom';
@@ -25,7 +24,7 @@ Login.defaultProps = {
 };
 
 Login.propTypes = {
-    match: matchType,
+    match: matchType.isRequired,
     token: tokenType,
 };
 

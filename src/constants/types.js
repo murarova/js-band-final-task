@@ -2,13 +2,18 @@ import PropTypes from 'prop-types';
 
 const { shape, arrayOf, number, string, func, bool } = PropTypes;
 
+// ========= functions =======
+
 export const onSubmitType = func;
 export const addToCartStartType = func;
 export const onClickType = func;
 export const searchByTitleType = func;
 export const filterByPriceType = func;
 export const purchaseRequestType = func;
-export const errorType = string;
+export const logoutType = func;
+export const fetchOneBookType = func;
+export const fetchBooksType = func;
+export const loadMoreType = func;
 
 // ========= Books ===========
 
@@ -31,8 +36,9 @@ export const bookType = shape({
 });
 
 export const booksType = arrayOf(bookType);
+export const listingsType = arrayOf(booksType);
 
-// ============================
+// =========== cart ===========
 
 export const orderType = shape({
     idType,
@@ -41,21 +47,16 @@ export const orderType = shape({
 });
 export const cartType = arrayOf(orderType);
 
+// =========== else ===========
+
+export const usernameType = string;
+export const avatarType = string;
+export const loaderType = bool;
+export const tokenType = string;
+export const iconType = string;
+export const errorType = string;
 export const matchType = shape({
     path: string,
     url: string,
     isExact: bool,
 });
-
-export const logoutType = func;
-export const usernameType = string;
-export const avatarType = string;
-
-export const fetchOneBookType = func;
-export const fetchBooksType = func;
-export const loaderType = bool;
-export const listingsType = arrayOf(booksType);
-
-export const loadMoreType = func;
-export const tokenType = string;
-export const iconType = string;

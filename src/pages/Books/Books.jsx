@@ -1,4 +1,3 @@
-/* eslint-disable react/require-default-props */
 import React, { Component } from 'react';
 import Loader from 'react-loader-spinner';
 import { connect } from 'react-redux';
@@ -22,11 +21,6 @@ import {
 } from '../../constants/types';
 
 class Books extends Component {
-    // eslint-disable-next-line no-useless-constructor
-    constructor(props) {
-        super(props);
-    }
-
     componentDidMount() {
         const { fetchBooks } = this.props;
         fetchBooks();
@@ -52,22 +46,30 @@ class Books extends Component {
                                     />
                                 </div>
                             ) : (
-                                <>
-                                    <div className="book-list">
-                                        <BooksList books={listings} />
-                                    </div>
-                                    <div className="row justify-content-center">
-                                        <div className="">
-                                            <button
-                                                type="button"
-                                                className="btn btn-warning load-more-btn"
-                                                onClick={loadMore}
-                                            >
-                                                Load More
-                                            </button>
+                                (listings && listings.length && (
+                                    <>
+                                        <div className="book-list">
+                                            <BooksList books={listings} />
                                         </div>
-                                    </div>
-                                </>
+                                        {listings && listings.length > 7 && (
+                                            <div className="row justify-content-center">
+                                                <div className="">
+                                                    <button
+                                                        type="button"
+                                                        className="btn btn-warning load-more-btn"
+                                                        onClick={loadMore}
+                                                    >
+                                                        Load More
+                                                    </button>
+                                                </div>
+                                            </div>
+                                        )}
+                                    </>
+                                )) || (
+                                    <h2 className="nothing-found">
+                                        Nothing found
+                                    </h2>
+                                )
                             )}
                         </div>
                     </div>
@@ -77,12 +79,16 @@ class Books extends Component {
     }
 }
 
+Books.defaultProps = {
+    listings: [],
+};
+
 Books.propTypes = {
-    match: matchType,
-    fetchBooks: fetchBooksType,
-    loader: loaderType,
+    match: matchType.isRequired,
+    fetchBooks: fetchBooksType.isRequired,
+    loader: loaderType.isRequired,
     listings: listingsType,
-    loadMore: loadMoreType,
+    loadMore: loadMoreType.isRequired,
 };
 
 const mapStateToProps = state => ({

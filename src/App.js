@@ -15,8 +15,12 @@ const App = () => (
             <Route path="/login" component={Login} />
             <Redirect exact path="/" to="/books" />
             <ProtectedComponent exact path="/books" component={Books} />
-            <ProtectedComponent path="/books/:id" component={OneBookPage} />
-            <ProtectedComponent path="/cart" component={ShoppingCart} />
+            <ProtectedComponent
+                exact
+                path="/books/:id"
+                component={OneBookPage}
+            />
+            <ProtectedComponent exact path="/cart" component={ShoppingCart} />
             <Route component={PageNotFound} />
         </Switch>
         <ToastContainer />

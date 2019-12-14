@@ -1,8 +1,6 @@
-The application has the same functionality as
-[https://github.com/murarova/js-band-test-task](js-bang-test-task) but using
-React.js
+## JS-BAND STORE
 
-Demo: https://murarova.github.io/js-band-hw-task-7/#/todos
+[Demo](https://murarova.github.io/js-band-final-task/)
 
 This project was bootstrapped with
 [Create React App](https://github.com/facebook/create-react-app).
@@ -31,6 +29,14 @@ See the section about
 [deployment](https://facebook.github.io/create-react-app/docs/deployment) for
 more information.
 
+### `npm run lint`
+
+Use for linting
+
+### `npm run deploy`
+
+Use for deploy on gh-pages
+
 ## Learn More
 
 You can learn more in the
@@ -57,13 +63,3 @@ https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app
 
 This section has moved here:
 https://facebook.github.io/create-react-app/docs/advanced-configuration
-
-### Deployment
-
-This section has moved here:
-https://facebook.github.io/create-react-app/docs/deployment
-
-### `npm run build` fails to minify
-
-This section has moved here:
-https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify
