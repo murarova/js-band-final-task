@@ -4,15 +4,19 @@ import { ToastContainer } from 'react-toastify';
 import Books from './pages/Books/Books';
 import PageNotFound from './pages/NotFound/NotFound';
 import Login from './pages/Login/Login';
+import OneBookPage from './pages/OneBookPage/OneBookPage';
+import ShoppingCart from './pages/ShoppingCart/ShoppingCart';
 import ProtectedComponent from './hoc/ProtectedComponent';
-import './index.css';
+import './styles/index.scss';
 
 const App = () => (
     <>
         <Switch>
             <Route path="/login" component={Login} />
             <Redirect exact path="/" to="/books" />
-            <ProtectedComponent path="/books" component={Books} />
+            <ProtectedComponent exact path="/books" component={Books} />
+            <ProtectedComponent path="/books/:id" component={OneBookPage} />
+            <ProtectedComponent path="/cart" component={ShoppingCart} />
             <Route component={PageNotFound} />
         </Switch>
         <ToastContainer />

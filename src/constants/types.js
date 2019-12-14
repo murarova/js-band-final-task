@@ -2,58 +2,60 @@ import PropTypes from 'prop-types';
 
 const { shape, arrayOf, number, string, func, bool } = PropTypes;
 
-export const onSubmitType = func.isRequired;
-export const searchByTitleType = func.isRequired;
-export const filterByPriceType = func.isRequired;
+export const onSubmitType = func;
+export const addToCartStartType = func;
+export const onClickType = func;
+export const searchByTitleType = func;
+export const filterByPriceType = func;
+export const purchaseRequestType = func;
 export const errorType = string;
 
 // ========= Books ===========
 
-export const titleType = string.isRequired;
-export const priceType = number.isRequired;
-export const authorType = string.isRequired;
-export const descriptionType = string.isRequired;
-export const coverType = string.isRequired;
+export const idType = string;
+export const titleType = string;
+export const priceType = number;
+export const authorType = string;
+export const descriptionType = string;
+export const coverType = string;
+export const levelType = string;
 
-export const booksType = arrayOf(
-    shape({
-        idType: string.isRequired,
-        titleType: string.isRequired,
-        authorType: string.isRequired,
-        levelType: string.isRequired,
-        descriptionType: string.isRequired,
-        coverType: string.isRequired,
-        tagsType: arrayOf(string),
-    }),
-);
+export const bookType = shape({
+    idType,
+    titleType,
+    authorType,
+    levelType,
+    descriptionType,
+    coverType,
+    tagsType: arrayOf(string),
+});
+
+export const booksType = arrayOf(bookType);
 
 // ============================
 
-export const matchType = shape({
-    path: string.isRequired,
-    url: string.isRequired,
-    isExact: bool.isRequired,
-}).isRequired;
+export const orderType = shape({
+    idType,
+    titleType,
+    priceType,
+});
+export const cartType = arrayOf(orderType);
 
-export const logoutType = func.isRequired;
+export const matchType = shape({
+    path: string,
+    url: string,
+    isExact: bool,
+});
+
+export const logoutType = func;
 export const usernameType = string;
 export const avatarType = string;
 
-export const fetchBooksType = func.isRequired;
-export const loaderType = bool.isRequired;
-export const listingsType = arrayOf(
-    shape({
-        idType: string.isRequired,
-        titleType: string.isRequired,
-        authorType: string.isRequired,
-        levelType: string.isRequired,
-        descriptionType: string.isRequired,
-        coverType: string.isRequired,
-        tagsType: arrayOf(string),
-    }),
-).isRequired;
+export const fetchOneBookType = func;
+export const fetchBooksType = func;
+export const loaderType = bool;
+export const listingsType = arrayOf(booksType);
 
-export const loadMoreType = func.isRequired;
+export const loadMoreType = func;
 export const tokenType = string;
-export const iconType = string.isRequired;
-// export const
+export const iconType = string;

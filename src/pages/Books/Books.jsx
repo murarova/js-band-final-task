@@ -22,6 +22,7 @@ import {
 } from '../../constants/types';
 
 class Books extends Component {
+    // eslint-disable-next-line no-useless-constructor
     constructor(props) {
         super(props);
     }
@@ -40,32 +41,32 @@ class Books extends Component {
                     <div className="row justify-content-center">
                         <div className="col-xs-8 col-sm-12">
                             <Filter />
-                            <div className="book-list">
-                                {loader ? (
-                                    <div className="loader">
-                                        <Loader
-                                            type="Oval"
-                                            color="#284060"
-                                            height={35}
-                                            width={35}
-                                            timeout={3000}
-                                        />
-                                    </div>
-                                ) : (
+                            {loader ? (
+                                <div className="row justify-content-center">
+                                    <Loader
+                                        className="loader"
+                                        type="Oval"
+                                        color="#337ab7"
+                                        height={55}
+                                        width={55}
+                                    />
+                                </div>
+                            ) : (
+                                <div className="book-list">
                                     <BooksList books={listings} />
-                                )}
-                            </div>
-                        </div>
-                    </div>
-                    <div className="row justify-content-center">
-                        <div className="">
-                            <button
-                                type="button"
-                                className="btn btn-warning load-more-btn"
-                                onClick={loadMore}
-                            >
-                                Load More
-                            </button>
+                                    <div className="row justify-content-center">
+                                        <div className="">
+                                            <button
+                                                type="button"
+                                                className="btn btn-warning load-more-btn"
+                                                onClick={loadMore}
+                                            >
+                                                Load More
+                                            </button>
+                                        </div>
+                                    </div>
+                                </div>
+                            )}
                         </div>
                     </div>
                 </div>
