@@ -52,8 +52,10 @@ class Books extends Component {
                                     />
                                 </div>
                             ) : (
-                                <div className="book-list">
-                                    <BooksList books={listings} />
+                                <>
+                                    <div className="book-list">
+                                        <BooksList books={listings} />
+                                    </div>
                                     <div className="row justify-content-center">
                                         <div className="">
                                             <button
@@ -65,7 +67,7 @@ class Books extends Component {
                                             </button>
                                         </div>
                                     </div>
-                                </div>
+                                </>
                             )}
                         </div>
                     </div>
