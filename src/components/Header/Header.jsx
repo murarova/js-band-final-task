@@ -38,7 +38,8 @@ class Header extends Component {
                     </header>
                 )}
 
-                {match.path.includes('/book') && (
+                {(match.path.includes('/book') ||
+                    match.path.includes('/cart')) && (
                     <header>
                         <nav className="navbar navbar-light bg-primary">
                             <div className="container">
@@ -70,7 +71,7 @@ class Header extends Component {
                                     id="bs-example-navbar-collapse-1"
                                 >
                                     <ul className="nav navbar-nav navbar-right menu">
-                                        <li className="menu-item">
+                                        <li className="menu-item cart-item">
                                             <Link to="/cart">
                                                 <Icon
                                                     icon="ShoppingCart"

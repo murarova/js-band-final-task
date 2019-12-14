@@ -4,6 +4,7 @@ import filterBooks from '../../utils/filter';
 
 const initialState = {
     books: [],
+    oneBook: undefined,
     pageSize: 6,
     listings: [],
     loader: false,
@@ -83,6 +84,19 @@ export const booksReducer = (state = initialState, { type, payload }) => {
                 }).slice(0, 6),
                 pageSize: 6,
             };
+
+        case booksTypes.FETCH_ONE_BOOK_REQUEST:
+            return { ...state, loader: true };
+
+        case booksTypes.FETCH_ONE_BOOK_SUCCESS:
+            return {
+                ...state,
+                book: payload.book,
+                loader: false,
+            };
+
+        case booksTypes.FETCH_ONE_BOOK_ERROR:
+            return { ...state, error: payload, loader: false };
 
         default:
             return state;

@@ -61,7 +61,7 @@ export const fetchBooks = () => ({
 });
 
 export const fetchOneBookSuccess = book => ({
-    type: booksTypes.FETCH_ONE_BOOK_REQUEST,
+    type: booksTypes.FETCH_ONE_BOOK_SUCCESS,
     payload: {
         book,
     },

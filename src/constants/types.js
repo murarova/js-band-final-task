@@ -3,8 +3,11 @@ import PropTypes from 'prop-types';
 const { shape, arrayOf, number, string, func, bool } = PropTypes;
 
 export const onSubmitType = func;
+export const addToCartStartType = func;
+export const onClickType = func;
 export const searchByTitleType = func;
 export const filterByPriceType = func;
+export const purchaseRequestType = func;
 export const errorType = string;
 
 // ========= Books ===========
@@ -30,6 +33,13 @@ export const bookType = shape({
 export const booksType = arrayOf(bookType);
 
 // ============================
+
+export const orderType = shape({
+    idType,
+    titleType,
+    priceType,
+});
+export const cartType = arrayOf(orderType);
 
 export const matchType = shape({
     path: string,

@@ -6,7 +6,13 @@
     background-color: #ffffff;
 }
 
-.navbar-brand:hover {
+.navbar-brand {
+    transition: all 0.2s ease-in-out;
+}
+
+.navbar-brand:hover,
+.navbar-brand:active {
+    transform: scale(1.1);
     color: #ffffff;
 }
 
@@ -27,6 +33,10 @@
     width: 25px;
     height: 25px;
     fill: #ffffff;
+}
+
+.cart-item:hover .shopping-cart {
+    fill: #000000;
 }
 
 .avatar-wrapper {
