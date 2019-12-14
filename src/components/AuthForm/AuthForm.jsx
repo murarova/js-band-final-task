@@ -32,7 +32,7 @@ class AuthForm extends Component {
         const { username } = this.state;
 
         if (username.length < 4 || username.length > 16) {
-            notify.error('The username should be between 4 and 16 symbols');
+            notify.error('Field is not valid');
             return;
         }
 
@@ -83,12 +83,11 @@ class AuthForm extends Component {
 }
 
 AuthForm.defaultProps = {
-    onSubmit: () => {},
     error: '',
 };
 
 AuthForm.propTypes = {
-    onSubmit: onSubmitType,
+    onSubmit: onSubmitType.isRequired,
     error: errorType,
 };
 

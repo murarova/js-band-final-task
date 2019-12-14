@@ -5,7 +5,7 @@ import filterBooks from '../../utils/filter';
 const initialState = {
     books: [],
     oneBook: undefined,
-    pageSize: 6,
+    pageSize: 8,
     listings: [],
     loader: false,
     error: null,
@@ -38,17 +38,17 @@ export const booksReducer = (state = initialState, { type, payload }) => {
                     ...state.listings,
                     ...filterBooks(state.books, state.search).slice(
                         state.pageSize,
-                        state.pageSize + 6,
+                        state.pageSize + 8,
                     ),
                 ],
-                pageSize: state.pageSize + 6,
+                pageSize: state.pageSize + 8,
             };
         case booksTypes.SEARCH_BY_TITLE:
             if (payload.search === '' && state.search.price === 'price') {
                 return {
                     ...state,
-                    listings: state.books.slice(0, 6),
-                    pageSize: 6,
+                    listings: state.books.slice(0, 8),
+                    pageSize: 8,
                 };
             }
             return {
@@ -60,16 +60,16 @@ export const booksReducer = (state = initialState, { type, payload }) => {
                 listings: filterBooks(state.books, {
                     ...state.search,
                     title: payload.search,
-                }).slice(0, 6),
-                pageSize: 6,
+                }).slice(0, 8),
+                pageSize: 8,
             };
 
         case booksTypes.FILTER_BY_PRICE:
             if (state.search.title === '' && payload.filter === 'price') {
                 return {
                     ...state,
-                    listings: state.books.slice(0, 6),
-                    pageSize: 6,
+                    listings: state.books.slice(0, 8),
+                    pageSize: 8,
                 };
             }
             return {
@@ -81,8 +81,8 @@ export const booksReducer = (state = initialState, { type, payload }) => {
                 listings: filterBooks(state.books, {
                     ...state.search,
                     price: payload.filter,
-                }).slice(0, 6),
-                pageSize: 6,
+                }).slice(0, 8),
+                pageSize: 8,
             };
 
         case booksTypes.FETCH_ONE_BOOK_REQUEST:
@@ -91,6 +91,10 @@ export const booksReducer = (state = initialState, { type, payload }) => {
         case booksTypes.FETCH_ONE_BOOK_SUCCESS:
             return {
                 ...state,
+                search: {
+                    title: '',
+                    price: 'price',
+                },
                 book: payload.book,
                 loader: false,
             };

@@ -1,4 +1,3 @@
-/* eslint-disable react/require-default-props */
 import React from 'react';
 import Book from '../Book/Book';
 import { booksType } from '../../constants/types';
@@ -19,6 +18,10 @@ const BooksList = ({ books }) => {
     ) : (
         <p>Переучет, приходите завтра</p>
     );
+};
+
+BooksList.defaultProps = {
+    books: [],
 };
 
 BooksList.propTypes = {

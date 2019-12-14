@@ -1,6 +1,5 @@
-/* eslint-disable react/destructuring-assignment */
 /* eslint-disable jsx-a11y/label-has-associated-control */
-/* eslint-disable react/prefer-stateless-function */
+/* eslint-disable react/destructuring-assignment */
 import React, { Component } from 'react';
 import { bookType, onClickType } from '../../constants/types';
 import * as notify from '../../utils/notification';

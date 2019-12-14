@@ -1,5 +1,3 @@
-/* eslint-disable react/require-default-props */
-
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import Loader from 'react-loader-spinner';
@@ -46,7 +44,7 @@ class OneBookPage extends Component {
                             <div className="row">
                                 <div className="col-sm-6">
                                     <div className="row">
-                                        <div className="col-sm-6">
+                                        <div className="col-xs-6 col-sm-6">
                                             <img
                                                 src={book.cover}
                                                 alt="book cover"
@@ -62,9 +60,11 @@ class OneBookPage extends Component {
                                         </div>
                                     </div>
                                     <div className="row">
-                                        <p className="book-description">
-                                            {book.description}
-                                        </p>
+                                        <div className="col-sm-12">
+                                            <p className="book-description">
+                                                {book.description}
+                                            </p>
+                                        </div>
                                     </div>
                                 </div>
 
@@ -83,12 +83,16 @@ class OneBookPage extends Component {
     }
 }
 
+OneBookPage.defaultProps = {
+    book: {},
+};
+
 OneBookPage.propTypes = {
-    match: matchType,
+    match: matchType.isRequired,
     book: bookType,
-    loader: loaderType,
-    fetchOneBook: fetchOneBookType,
-    addToCartStart: addToCartStartType,
+    loader: loaderType.isRequired,
+    fetchOneBook: fetchOneBookType.isRequired,
+    addToCartStart: addToCartStartType.isRequired,
 };
 
 const mapStateToProps = state => ({

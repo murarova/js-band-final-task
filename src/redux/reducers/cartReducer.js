@@ -42,18 +42,17 @@ export const cartReducer = (state = initialState, { type, payload }) => {
             return { ...state };
 
         case cartTypes.PURCHASE_REQUEST:
-            return { ...state, loader: true };
+            return { ...state };
 
         case cartTypes.PURCHASE_SUCCESS:
-            notify.success('Thank you for yor order!');
+            notify.success('Thanks you for yor order!');
             return {
                 ...state,
                 books: [],
-                loader: false,
             };
         case cartTypes.PURCHASE_ERROR:
             notify.error('Something went wrong');
-            return { ...state, error: payload, loader: false };
+            return { ...state };
 
         default:
             return state;
