@@ -1,5 +1,7 @@
 ## JS-BAND STORE
 
+Ciklum University: JS Band Internship. Final task
+
 [Demo](https://murarova.github.io/js-band-final-task/)
 
 This project was bootstrapped with
