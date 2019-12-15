@@ -30,7 +30,7 @@ class Header extends Component {
                             <div className="container">
                                 <div className="navbar-header">
                                     <p className="navbar-brand">
-                                        JS-BAND STORE / Your full name
+                                        JS-BAND STORE / Liubov Murarova
                                     </p>
                                 </div>
                             </div>
@@ -62,7 +62,7 @@ class Header extends Component {
                                         to="/books"
                                         className="navbar-brand navbar-left white"
                                     >
-                                        JS-BAND STORE
+                                        JS-BAND STORE / Liubov Murarova
                                     </Link>
                                 </div>
 
