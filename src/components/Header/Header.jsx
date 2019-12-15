@@ -1,4 +1,3 @@
-/* eslint-disable react/require-default-props */
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { Link } from 'react-router-dom';
@@ -116,8 +115,8 @@ Header.defaultProps = {
 };
 
 Header.propTypes = {
-    match: matchType,
-    logout: logoutType,
+    match: matchType.isRequired,
+    logout: logoutType.isRequired,
     username: usernameType,
     avatar: avatarType,
 };

@@ -1,4 +1,3 @@
-/* eslint-disable react/require-default-props */
 /* eslint-disable jsx-a11y/no-onchange */
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
@@ -66,8 +65,8 @@ class Filter extends Component {
 }
 
 Filter.propTypes = {
-    searchByTitle: searchByTitleType,
-    filterByPrice: filterByPriceType,
+    searchByTitle: searchByTitleType.isRequired,
+    filterByPrice: filterByPriceType.isRequired,
 };
 
 const mapDispatchToProps = dispatch => ({
